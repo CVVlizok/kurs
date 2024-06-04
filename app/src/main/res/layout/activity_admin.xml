@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF7FD8E4"
+    tools:context=".AdminActivity"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Button to expand/collapse content -->
+        <Button
+            android:id="@+id/expandableButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Пульс ▼"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="onExpandableButtonClick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="spread" />
+
+        <!-- Expandable content layout -->
+        <LinearLayout
+            android:id="@+id/expandableLayout1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableButton1"
+            app:layout_constraintWidth_default="spread">
+
+            <!-- Information TextView -->
+            <TextView
+                android:id="@+id/informationText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нормы пульса:
+                \n0-1 год: 100-160 уд/мин
+                \n1-10 лет: 70-120 уд/мин
+                \n10-20 лет: 60-100 уд/мин
+                \n20-60 лет: 60-100 уд/мин
+                \n60+ лет: 60-100 уд/мин"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Additional button -->
+            <Button
+                android:id="@+id/additionalButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ввести данные"
+                android:onClick="onAdditionalButtonClick" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/expandableButton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Давление ▼"
+            android:layout_marginBottom="16dp"
+            android:onClick="onExpandableButtonClick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableLayout1"
+            app:layout_constraintWidth_default="spread" />
+
+        <!-- Expandable content layout -->
+        <LinearLayout
+            android:id="@+id/expandableLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableButton2"
+            app:layout_constraintWidth_default="spread">
+
+            <!-- Information TextView -->
+            <TextView
+                android:id="@+id/informationText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нормы давления:
+                \n0-1 год: 70-90 / 50-60 мм рт. ст.
+                \n1-10 лет: 80-120 / 60-80 мм рт. ст.
+                \n10-20 лет: 110-120 / 70-80 мм рт. ст.
+                \n20-60 лет: 120-130 / 80-85 мм рт. ст.
+                \n60+ лет: 130-140 / 85-90 мм рт. ст."
+                android:layout_marginBottom="16dp" />
+
+            <!-- Additional button -->
+            <Button
+                android:id="@+id/additionalButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ввести данные"
+                android:onClick="onAdditionalButtonClick" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/expandableButton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Кислород в крови▼"
+            android:layout_marginBottom="16dp"
+            android:onClick="onExpandableButtonClick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableLayout2"
+            app:layout_constraintWidth_default="spread" />
+
+        <!-- Expandable content layout -->
+        <LinearLayout
+            android:id="@+id/expandableLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableButton3"
+            app:layout_constraintWidth_default="spread">
+
+            <!-- Information TextView -->
+            <TextView
+                android:id="@+id/informationText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нормы кислорода в крови:
+                \nВсе возрастные группы: 95-100%"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Additional button -->
+            <Button
+                android:id="@+id/additionalButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ввести данные"
+                android:onClick="onAdditionalButtonClick" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/expandableButton4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Глюкоза в крови ▼"
+            android:layout_marginBottom="16dp"
+            android:onClick="onExpandableButtonClick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableLayout3"
+            app:layout_constraintWidth_default="spread" />
+
+        <!-- Expandable content layout -->
+        <LinearLayout
+            android:id="@+id/expandableLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableButton4"
+            app:layout_constraintWidth_default="spread">
+
+            <!-- Information TextView -->
+            <TextView
+                android:id="@+id/informationText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нормы глюкозы в крови:
+                \n0-1 год: 2.8-4.4 ммоль/л
+                \n1-10 лет: 3.3-5.6 ммоль/л
+                \n10-20 лет: 3.3-5.5 ммоль/л
+                \n20-60 лет: 3.3-5.5 ммоль/л
+                \n60+ лет: 4.6-6.4 ммоль/л"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Additional button -->
+            <Button
+                android:id="@+id/additionalButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ввести данные"
+                android:onClick="onAdditionalButtonClick" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/expandableButton5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Температура▼"
+            android:layout_marginBottom="16dp"
+            android:onClick="onExpandableButtonClick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableLayout4"
+            app:layout_constraintWidth_default="spread" />
+
+        <!-- Expandable content layout -->
+        <LinearLayout
+            android:id="@+id/expandableLayout5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableButton5"
+            app:layout_constraintWidth_default="spread">
+
+            <!-- Information TextView -->
+            <TextView
+                android:id="@+id/informationText5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нормы температуры: 36.6°C"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Additional button -->
+            <Button
+                android:id="@+id/additionalButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ввести данные"
+                android:onClick="onAdditionalButtonClick" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/expandableButton6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Частота дыхания ▼"
+            android:layout_marginBottom="16dp"
+            android:onClick="onExpandableButtonClick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableLayout5"
+            app:layout_constraintWidth_default="spread" />
+
+        <!-- Expandable content layout -->
+        <LinearLayout
+            android:id="@+id/expandableLayout6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableButton6"
+            app:layout_constraintWidth_default="spread">
+
+            <!-- Information TextView -->
+            <TextView
+                android:id="@+id/informationText6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нормы частоты дыхания:
+                \n0-1 год: 30-40 в мин.
+                \n1-10 лет: 20-30 в мин.
+                \n10-20 лет: 12-20 в мин.
+                \n20-60 лет: 12-20 в мин.
+                \n60+ лет: 12-20 в мин."
+                android:layout_marginBottom="16dp" />
+
+            <!-- Additional button -->
+            <Button
+                android:id="@+id/additionalButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ввести данные"
+                android:onClick="onAdditionalButtonClick" />
+        </LinearLayout>
+
+        <!-- Button to delete data -->
+        <Button
+            android:id="@+id/deleteDataButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/r"
+            android:text="Удалить данные"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandableLayout6"
+            app:layout_constraintWidth_default="spread" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF7FD8E4"
+    tools:context=".LoginActivity">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/radioAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="администратор"
+            android:layout_marginEnd="16dp" />
+
+        <RadioButton
+            android:id="@+id/radioUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="пользователь" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/nameEmail"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:hint="@string/email"
+        android:inputType="text|textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/namePassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/nameEmail"
+        app:layout_constraintStart_toStartOf="@+id/nameEmail"
+        app:layout_constraintTop_toBottomOf="@+id/nameEmail" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="118dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/dark_body"
+        android:text="@string/login"
+        android:textColor="@color/black"
+        android:onClick="onLoginClicked"
+        app:layout_constraintEnd_toEndOf="@+id/namePassword"
+        app:layout_constraintStart_toStartOf="@+id/namePassword"
+        app:layout_constraintTop_toBottomOf="@+id/namePassword" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/no_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/no_account" />
+
+        <TextView
+            android:id="@+id/go_to_page_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/sign_up"
+            android:textColor="@color/blue"
+            android:onClick="onSignUpClicked" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

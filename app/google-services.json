@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "840185040355",
+    "firebase_url": "https://kurs-7835d-default-rtdb.firebaseio.com",
+    "project_id": "kurs-7835d",
+    "storage_bucket": "kurs-7835d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840185040355:android:ba94aa6f7556ff5ea8a4d6",
+        "android_client_info": {
+          "package_name": "com.example.kurs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmsBEn2k4DUlHf8IUwWpOq0vaeoGDQfSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите email пользователя" />
+
+    <Spinner
+        android:id="@+id/healthParameterSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/datePickerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выберите дату"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/timePickerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выберите время"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Удалить данные"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_red_dark"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

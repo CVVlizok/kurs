@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">kurs</string>
+    <string name="email">e-mail</string>
+    <string name="password">password</string>
+    <string name="login">Войти</string>
+    <string name="no_account">Нет аккаунта?</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="username">username</string>
+    <string-array name="expandable_titles">
+        <item>Пульс</item>
+        <item>Давление</item>
+        <item>Кислород в крови</item>
+        <item>Глюкоза в крови</item>
+        <item>Температура</item>
+        <item>Частота дыхания</item>
+    </string-array>
+    <string-array name="health_parameters">
+        <item>Пульс</item>
+        <item>Давление</item>
+        <item>Кислород в крови</item>
+        <item>Глюкоза в крови</item>
+        <item>Температура</item>
+        <item>Частота дыхания</item>
+    </string-array>
+</resources>
