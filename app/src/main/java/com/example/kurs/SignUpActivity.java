@@ -76,5 +76,4 @@ public class SignUpActivity extends AppCompatActivity {
         User user = new User(username, email); // Создание объекта User с указанными именем и электронной почтой
         mDatabase.child(userId).setValue(user); // Сохранение пользователя в базу данных
     }
-
 }

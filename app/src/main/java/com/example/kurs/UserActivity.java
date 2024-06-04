@@ -80,7 +80,6 @@ public class UserActivity extends AppCompatActivity {
         }
     }
 
-
     private void onExpandableButtonClick(int index) {
         if (isExpanded[index]) {
             collapse(expandableLayouts[index]);
@@ -91,7 +90,6 @@ public class UserActivity extends AppCompatActivity {
         }
         isExpanded[index] = !isExpanded[index];
     }
-
 
     private void showInputDialog(int index) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -140,7 +138,6 @@ public class UserActivity extends AppCompatActivity {
                 }
             });
         }
-
         dialog.show();
     }
 
@@ -167,7 +164,6 @@ public class UserActivity extends AppCompatActivity {
 
         dialog.show();
     }
-
 
     private void saveData(int index, String data) {
         FirebaseUser user = mAuth.getCurrentUser();

@@ -107,8 +107,6 @@ public class AdminActivity extends AppCompatActivity {
         }
     }
 
-
-
     private void onExpandableButtonClick(int index) {
         if (isExpanded[index]) {
             collapse(expandableLayouts[index]);
@@ -145,10 +143,6 @@ public class AdminActivity extends AppCompatActivity {
 
         dialog.show(); // Используем dialog здесь
     }
-
-
-
-
 
     private void showInputDialog(int index) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -341,13 +335,6 @@ public class AdminActivity extends AppCompatActivity {
         dialog.show();
     }
 
-
-
-
-
-
-
-
     private void showCustomTimePickerDialog(Button timePickerButton, Calendar calendar) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
@@ -382,11 +369,6 @@ public class AdminActivity extends AppCompatActivity {
 
         dialog.show();
     }
-
-
-
-
-
 
     private void deleteData(String email, String healthParameter, String dateTime) {
         String path = getPathFromHealthParameter(healthParameter);
@@ -442,14 +424,6 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
-
-
-
-
 
     private String getPathFromHealthParameter(String healthParameter) {
         switch (healthParameter) {
