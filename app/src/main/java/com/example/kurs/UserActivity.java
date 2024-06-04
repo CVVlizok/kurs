@@ -2,7 +2,9 @@ package com.example.kurs;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +63,23 @@ public class UserActivity extends AppCompatActivity {
             Button additionalButton = findViewById(additionalButtonId);
             additionalButton.setOnClickListener(view -> showInputDialog(index));
         }
+
+        // Инициализация кнопки помощи
+        Button helpButton = findViewById(R.id.helpButton);
+        helpButton.setOnClickListener(v -> showHelpDialog());
     }
+
+    private void filterButtons(String query) {
+        for (int i = 0; i < expandableButtons.length; i++) {
+            String buttonText = expandableButtons[i].getText().toString().toLowerCase();
+            if (buttonText.contains(query.toLowerCase())) {
+                expandableButtons[i].setVisibility(View.VISIBLE);
+            } else {
+                expandableButtons[i].setVisibility(View.GONE);
+            }
+        }
+    }
+
 
     private void onExpandableButtonClick(int index) {
         if (isExpanded[index]) {
@@ -73,6 +91,7 @@ public class UserActivity extends AppCompatActivity {
         }
         isExpanded[index] = !isExpanded[index];
     }
+
 
     private void showInputDialog(int index) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -124,6 +143,31 @@ public class UserActivity extends AppCompatActivity {
 
         dialog.show();
     }
+
+    private void showHelpDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.help_dialog, null);
+        builder.setView(dialogView);
+
+        TextView helpTextView = dialogView.findViewById(R.id.helpTextView);
+        Button okButton = dialogView.findViewById(R.id.okButton);
+
+        String helpText = "Инструкция по использованию приложения:\n\n" +
+                "1. Используйте строку поиска, чтобы найти необходимый параметр здоровья.\n" +
+                "2. Нажмите на название параметра, чтобы раскрыть дополнительную информацию.\n" +
+                "3. Используйте кнопку 'Ввести данные', чтобы добавить новую запись.\n" +
+                "4. Используйте кнопку 'Как пользоваться приложением', чтобы снова увидеть эту инструкцию.";
+
+        helpTextView.setText(helpText);
+
+        AlertDialog dialog = builder.create();
+
+        okButton.setOnClickListener(v -> dialog.dismiss());
+
+        dialog.show();
+    }
+
 
     private void saveData(int index, String data) {
         FirebaseUser user = mAuth.getCurrentUser();

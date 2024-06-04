@@ -4,7 +4,9 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,6 +56,22 @@ public class AdminActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        EditText searchEditText = findViewById(R.id.searchEditText);
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filterButtons(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
         for (int i = 1; i <= 6; i++) {
             int buttonId = getResources().getIdentifier("expandableButton" + i, "id", getPackageName());
             int layoutId = getResources().getIdentifier("expandableLayout" + i, "id", getPackageName());
@@ -72,7 +90,24 @@ public class AdminActivity extends AppCompatActivity {
 
         Button deleteDataButton = findViewById(R.id.deleteDataButton);
         deleteDataButton.setOnClickListener(view -> showDeleteDialog());
+
+        Button helpButton = findViewById(R.id.helpButton);
+        helpButton.setOnClickListener(view -> showHelpDialog());
+
     }
+
+    private void filterButtons(String query) {
+        for (int i = 0; i < expandableButtons.length; i++) {
+            String buttonText = expandableButtons[i].getText().toString().toLowerCase();
+            if (buttonText.contains(query.toLowerCase())) {
+                expandableButtons[i].setVisibility(View.VISIBLE);
+            } else {
+                expandableButtons[i].setVisibility(View.GONE);
+            }
+        }
+    }
+
+
 
     private void onExpandableButtonClick(int index) {
         if (isExpanded[index]) {
@@ -84,6 +119,36 @@ public class AdminActivity extends AppCompatActivity {
         }
         isExpanded[index] = !isExpanded[index];
     }
+
+    // Метод для отображения окна с инструкцией
+    private void showHelpDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.help_dialog, null);
+        builder.setView(dialogView);
+
+        TextView helpTextView = dialogView.findViewById(R.id.helpTextView);
+        Button okButton = dialogView.findViewById(R.id.okButton);
+
+        String helpText = "Инструкция по использованию приложения:\n\n" +
+                "1. Используйте строку поиска, чтобы найти необходимый параметр здоровья.\n" +
+                "2. Нажмите на название параметра, чтобы раскрыть дополнительную информацию.\n" +
+                "3. Используйте кнопку 'Ввести данные', чтобы добавить новую запись.\n" +
+                "4. Для удаления данных введите почту пользователя, выберите параметр, дату и время записи, затем нажмите 'Удалить данные'.\n" +
+                "5. Используйте кнопку 'Как пользоваться приложением', чтобы снова увидеть эту инструкцию.";
+
+        helpTextView.setText(helpText);
+
+        AlertDialog dialog = builder.create(); // Объявляем dialog здесь
+
+        okButton.setOnClickListener(v -> dialog.dismiss());
+
+        dialog.show(); // Используем dialog здесь
+    }
+
+
+
+
 
     private void showInputDialog(int index) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

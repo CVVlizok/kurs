@@ -12,21 +12,51 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Button to expand/collapse content -->
-        <Button
-            android:id="@+id/expandableButton1"
+        <EditText
+            android:id="@+id/searchEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Пульс ▼"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="16dp"
-            android:onClick="onExpandableButtonClick"
+            android:hint="Поиск..."
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_default="spread" />
 
+        <Button
+            android:id="@+id/helpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Как пользоваться приложением"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/g"
+            app:layout_constraintTop_toBottomOf="@id/expandableLayout6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_default="spread"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
+
+        <!-- Button to expand/collapse content -->
+
         <!-- Expandable content layout -->
+
+
+        <Button
+            android:id="@+id/expandableButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:onClick="onExpandableButtonClick"
+            android:text="Пульс ▼"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="spread" />
+
         <LinearLayout
             android:id="@+id/expandableLayout1"
             android:layout_width="0dp"
@@ -297,6 +327,9 @@
                 android:layout_height="wrap_content"
                 android:text="Ввести данные"
                 android:onClick="onAdditionalButtonClick" />
+
+
+
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
